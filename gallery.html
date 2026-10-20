@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,27 +10,19 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-        html,
-        body {
-            height: 100vh;
-            overflow: hidden;
-        }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f3f0ff;
             color: #141764;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
-
         header {
             background-color: #141764;
             color: white;
             flex-shrink: 0;
         }
-
         .top-header {
             height: 105px;
             display: flex;
@@ -40,28 +31,24 @@
             gap: 18px;
             border-bottom: 1px solid #23299c;
         }
-
         .logo {
-            width: 55px;
-            height: 55px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             border: 3px solid #7452e8;
             object-fit: cover;
         }
-
         .brand {
             font-size: 30px;
             font-weight: bold;
             letter-spacing: 2px;
         }
-
         nav {
             height: 65px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -69,120 +56,92 @@
             font-size: 17px;
             font-weight: bold;
         }
-
         nav a:hover,
         nav a.active {
             background-color: #23299c;
         }
-
         main {
             flex: 1;
-            padding: 15px 3%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            padding: 3vh 7%;
         }
-
         .portfolio-container {
             background-color: #f3f0ff;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            padding: 25px 40px;
+            padding: 2vh 40px;
             text-align: center;
-            width: 75%;
-            max-width: 75%;
-            height: 100%;
-
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-
         .portfolio-container h1 {
-            font-size: 30px;
+            font-size: clamp(28px, 6vh, 56px);
             color: #141764;
-            margin-bottom: 5px;
+            margin-bottom: 0.5vh;
         }
-
         .subtitle {
-            font-size: 15px;
+            font-size: clamp(12px, 2vh, 15px);
             color: #5548a1;
-            margin-bottom: 20px;
+            margin-bottom: 2vh;
         }
-
         .profiles-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px 20px;
+            gap: 1.5vh 20px;
             justify-items: center;
             align-content: center;
             width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
             flex: 1;
         }
-
         .profile-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
-
         .profile-card img {
-            width: 105px;
-            height: 105px;
+            width: clamp(40px, calc(26vh - 110px), 150px);
+            height: clamp(40px, calc(26vh - 110px), 150px);
             object-fit: cover;
             border-radius: 50%;
             border: 3px solid #23299c;
-            margin-bottom: 8px;
+            margin-bottom: 1vh;
             background-color: #ccc;
         }
-
         .profile-card span {
-            font-size: 12px;
+            font-size: clamp(10px, 1.6vh, 12px);
             font-weight: bold;
             color: #141764;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         footer {
             background-color: #141764;
             color: white;
             text-align: center;
-            padding: 18px;
+            padding: 22px;
             font-size: 14px;
             flex-shrink: 0;
         }
-
         @media (max-width: 700px) {
-
-            html,
-            body {
-                overflow: auto;
-                height: auto;
-            }
-
             .brand {
                 font-size: 20px;
             }
-
             nav a {
                 padding: 20px 12px;
                 font-size: 13px;
             }
-
             .portfolio-container {
                 padding: 30px 15px;
-                width: 95%;
-                max-width: 95%;
             }
-
             .profiles-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 25px 15px;
             }
-
             .profile-card img {
                 width: 100px;
                 height: 100px;
@@ -190,15 +149,12 @@
         }
     </style>
 </head>
-
 <body>
-
     <header>
         <div class="top-header">
             <img src="logo.png" class="logo" alt="Logo">
             <div class="brand">OROZCO CREATIVES</div>
         </div>
-
         <nav>
             <a href="index2.html">HOME</a>
             <a href="about.html">ABOUT</a>
@@ -206,23 +162,19 @@
             <a href="contact.html">CONTACT</a>
         </nav>
     </header>
-
     <main>
         <section class="portfolio-container">
             <h1>Creative Portfolio</h1>
             <p class="subtitle">My gallery of creative works collections</p>
-
             <div class="profiles-grid">
                 <div class="profile-card"><img src="img2.jpg" alt="Project 01"><span>Napping</span></div>
                 <div class="profile-card"><img src="img11.jpg" alt="Project 02"><span>School</span></div>
                 <div class="profile-card"><img src="img12.jpg" alt="Project 03"><span>Event 1</span></div>
                 <div class="profile-card"><img src="img9.jpg" alt="Project 04"><span>Event 2</span></div>
-
                 <div class="profile-card"><img src="img1.jpg" alt="Project 05"><span>New Phone</span></div>
                 <div class="profile-card"><img src="img10.jpg" alt="Project 06"><span>ZUS Coffee</span></div>
                 <div class="profile-card"><img src="img6.jpg" alt="Project 07"><span>Milk Tea</span></div>
                 <div class="profile-card"><img src="img7.jpg" alt="Project 08"><span>SM Baguio Foggy</span></div>
-
                 <div class="profile-card"><img src="img8.jpg" alt="Project 09"><span>Burnham Park Night</span></div>
                 <div class="profile-card"><img src="img5.jpg" alt="Project 10"><span>Burnham Park Day</span></div>
                 <div class="profile-card"><img src="img4.jpg" alt="Project 11"><span>Burnham Park Rain</span></div>
@@ -230,11 +182,8 @@
             </div>
         </section>
     </main>
-
     <footer>
         © 2026 Orozco Creatives
     </footer>
-
 </body>
-
 </html>

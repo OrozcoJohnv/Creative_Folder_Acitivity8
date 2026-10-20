@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orozco Creatives</title>
-
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f3f0ff;
             color: #141764;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-
         header {
             background-color: #141764;
             color: white;
         }
-
         .top-header {
             height: 105px;
             display: flex;
@@ -32,28 +30,24 @@
             gap: 18px;
             border-bottom: 1px solid #23299c;
         }
-
         .logo {
-            width: 55px;
-            height: 55px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             border: 3px solid #7452e8;
             object-fit: cover;
         }
-
         .brand {
             font-size: 30px;
             font-weight: bold;
             letter-spacing: 2px;
         }
-
         nav {
             height: 65px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -61,45 +55,40 @@
             font-size: 17px;
             font-weight: bold;
         }
-
         nav a:hover,
         nav a.active {
             background-color: #23299c;
         }
-
         main {
-            padding: 55px 7%;
+            flex: 1;
+            display: flex;
+            padding: 3vh 7%;
         }
-
         .hero {
             background-color: #f3f0ff;
-            min-height: 570px;
+            flex: 1;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 50px;
+            padding: 2vh 40px;
         }
-
         .hero h1 {
-            font-size: 42px;
+            font-size: clamp(20px, 3.4vh, 34px);
             color: #141764;
-            margin-bottom: 15px;
+            margin-bottom: 1vh;
             letter-spacing: 1px;
         }
-
         .hero h2 {
-            font-size: 20px;
+            font-size: clamp(13px, 2vh, 18px);
             font-weight: normal;
             font-style: italic;
-            margin-bottom: 35px;
+            margin-bottom: 3vh;
             color: #5548a1;
         }
-
         .description {
             max-width: 750px;
             font-size: 18px;
@@ -107,7 +96,71 @@
             margin-bottom: 30px;
             color: #2d3073;
         }
-
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 6%;
+            width: 100%;
+            max-width: 1000px;
+            align-items: center;
+            text-align: left;
+        }
+        .contact-info h3 {
+            font-size: clamp(14px, 2.4vh, 20px);
+            color: #7452e8;
+            margin-bottom: 1vh;
+        }
+        .contact-info h4 {
+            font-size: clamp(11px, 1.7vh, 14px);
+            margin-top: 2vh;
+        }
+        .contact-info p {
+            font-size: clamp(12px, 2vh, 16px);
+            line-height: 1.5;
+            color: #2d3073;
+        }
+        .contact-info .description {
+            max-width: none;
+            margin-bottom: 0;
+            overflow-wrap: anywhere;
+        }
+        .contact-form label {
+            display: block;
+            font-size: clamp(11px, 1.7vh, 14px);
+            font-weight: bold;
+            margin-bottom: 0.6vh;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1.2vh 12px;
+            font-family: inherit;
+            font-size: clamp(12px, 1.9vh, 15px);
+            color: #141764;
+            background-color: #fff;
+            border: 1px solid #d6d0f5;
+            border-radius: 6px;
+            margin-bottom: 1.8vh;
+        }
+        .contact-form textarea {
+            height: 11vh;
+            resize: none;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 1.4vh;
+            font-size: clamp(12px, 1.9vh, 15px);
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: white;
+            background-color: #141764;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #23299c;
+        }
         footer {
             background-color: #141764;
             color: white;
@@ -115,78 +168,69 @@
             padding: 22px;
             font-size: 14px;
         }
-
         @media (max-width: 700px) {
             .brand {
                 font-size: 20px;
             }
-
             nav a {
                 padding: 20px 12px;
                 font-size: 13px;
             }
-
-            .hero h1 {
-                font-size: 30px;
+            .hero {
+                padding: 20px;
             }
-
-            .profiles img {
-                width: 85px;
-                height: 85px;
-            }
-
-            .description {
-                font-size: 15px;
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2vh;
             }
         }
     </style>
 </head>
-
 <body>
-
-
     <header>
-
         <div class="top-header">
-
-
             <img src="logo.png" class="logo" alt="Logo">
-
             <div class="brand">
                 OROZCO CREATIVES
             </div>
-
         </div>
-
         <nav>
             <a href="index2.html">HOME</a>
             <a href="about.html">ABOUT</a>
             <a href="gallery.html">GALLERY</a>
             <a href="contact.html" class="active">CONTACT</a>
         </nav>
-
     </header>
-
-
     <main>
-
         <section class="hero">
-
             <h1>CONTACT ME THROUGH THESE PLATFORMS</h1>
-
-            <p class="description">
-                20265108@s.ubaguio.edu
-            </p>
-
+            <h2>Have a question or a project in mind? Reach out to me below.</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>CONTACT DETAILS</h3>
+                    <h4>EMAIL</h4>
+                    <p class="description">
+                        20265108@s.ubaguio.edu
+                    </p>
+                    <h4>STUDIO ADDRESS</h4>
+                    <p>123 Creative Blvd, Art District<br>Manila, Philippines</p>
+                    <h4>BUSINESS HOURS</h4>
+                    <p>Mon - Fri 9:00 AM - 6:00 PM</p>
+                </div>
+                <form class="contact-form" action="#">
+                    <label for="name">FULL NAME</label>
+                    <input type="text" id="name" placeholder="Your Name">
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="email" id="email" placeholder="email@example.com">
+                    <label for="message">COMMENTS / MESSAGE</label>
+                    <textarea id="message" placeholder="Write your message here..."></textarea>
+                    <button type="submit">SEND MESSAGE</button>
+                </form>
+            </div>
         </section>
-
     </main>
-
-
     <footer>
         © 2026 Orozco Creatives
     </footer>
-
 </body>
-
 </html>
